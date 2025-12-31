@@ -77,7 +77,7 @@ docker compose up --build
 
 The app will start at:
 
-http://localhost:5000
+http://localhost:5001
 
 🔍 API Endpoints
 Health Check
@@ -158,7 +158,7 @@ Add a frontend UI (React or simple HTML)
 
 
 These are foundational concepts used in real-world backend and cloud-native systems.
-
+---
 👤 Author
 Raphael Udubra
 Computer Science student with interests in backend systems, containers, and distributed applications.
