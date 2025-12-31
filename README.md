@@ -66,7 +66,71 @@ This project demonstrates:
 ### Prerequisites
 - Docker Desktop (macOS / Windows / Linux)
 ---
+## ▶️ How to Run the Application
 
+Follow the steps below to run the application locally using Docker.
+
+### Prerequisites
+- Docker Desktop installed and running
+
+Verify installation:
+```bash
+docker --version
+docker compose version
+
+Step 1: Clone the Repository
+git clone git@github.com:raphaeludubra/Containerized-flask-app.git
+cd Containerized-flask-app
+
+Step 2: Build and Start the Containers
+docker compose up --build
+
+
+This command will:
+
+Build the Flask application image
+
+Start the PostgreSQL database container
+
+Start the Flask API using Gunicorn
+
+Step 3: Access the Application
+
+Once the containers are running, access the app at:
+
+http://localhost:5000
+
+
+Health check endpoint:
+
+http://localhost:5000/health
+
+
+Expected response:
+
+{ "status": "ok" }
+
+Step 4: Test the API (Optional)
+
+Create a task:
+
+curl -X POST http://localhost:5000/tasks \
+  -H "Content-Type: application/json" \
+  -d '{"title":"My first task"}'
+
+
+Retrieve all tasks:
+
+curl http://localhost:5000/tasks
+
+Step 5: Stop the Application
+
+To stop the containers, press Ctrl + C, then run:
+
+docker compose down
+
+
+Database data will persist across restarts due to Docker volumes.
 ---
 👤 Author
 Raphael Udubra
